@@ -7,18 +7,19 @@
 int _printf(const char *format, ...)
 {
 	int count = 0;
-	int i;
+	int i = 0;
+	int spec = 0;
 	va_list ap;
-	va_start(ap, format);
 
-	if (format[i] = '\0')
-		return;
-	for (i = 0; format[i], i++)
+	va_start(ap, format);
+	if (format[i] == '\0')
+		return (-1);
+	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
 			spec = format[i + 1];
-			count = count + selector(spec(ap));
+			count = count + (*selector(spec))(ap);
 		}
 		else
 		{
