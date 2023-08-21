@@ -1,24 +1,33 @@
 #include "main.h"
-/*
-   *
-   *
-   *
-   */
+/**
+ * print_char - prints character
+ * @arg: va_list
+ * Return: count
+ */
 int print_char(va_list arg)
 {
+	int count = 0;
 	char val = va_arg(arg, int);
+
 	_putchar(val);
-	return 1;
+	count += 1;
+	return (count);
 }
+/**
+  * print_string  - print string
+  * @arg: argument
+  * Return: count
+  */
 int print_string(va_list arg)
 {
-	int cnt = 0;
+	int count = 0;
 	char *val = va_arg(arg, char *);
+
 	while (*val != '\0')
 	{
-		my_print(*val);
+		_putchar(*val);
 		val++;
-		cnt++
+		count++;
 	}
-	return (cnt);
+	return (count);
 }
