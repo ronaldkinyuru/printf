@@ -9,6 +9,7 @@ int _printf(const char *format, ...);
 int (*selector(char c))(va_list);
 int print_char(va_list arg);
 int print_string(va_list arg);
-
+int print_decimal(va_list arg);
+int print_integer(va_list arg);
 
 #endif /* MAIN_H*/

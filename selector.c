@@ -14,5 +14,13 @@ int (*selector(char c))(va_list)
 	{
 		return (&print_string);
 	}
+	else if (c == 'd')
+	{
+		return (&print_decimal);
+	}
+	else if(c == 'i')
+	{
+		return (&print_integer);
+	}
 	return (NULL);
 }

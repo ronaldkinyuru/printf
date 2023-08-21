@@ -31,3 +31,32 @@ int print_string(va_list arg)
 	}
 	return (count);
 }
+/**
+  * print_decimal - print decimal
+  * @arg: argument
+  * Return: count
+  */
+int print_decimal(va_list arg)
+{
+	int count = 0;
+	int val = va_arg(arg, int);
+
+	_putchar(val);
+	count += 1;
+	return (count);
+}
+
+/**
+ * print_integer - print integer
+ * @arg: argument
+ * Return: count
+ */
+int print_integer(va_list arg)
+{
+	int count = 0;
+	int val = va_arg(arg, int);
+
+	_putchar(val);
+	count += 1;
+	return (count);
+}
