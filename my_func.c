@@ -6,9 +6,11 @@
    */
 int print_char(va_list arg)
 {
+	int cnt = 0;
 	char val = va_arg(arg, int);
 	_putchar(val);
-	return 1;
+	cnt = cnt + 1;
+	return (cnt);
 }
 int print_string(va_list arg)
 {
@@ -16,7 +18,7 @@ int print_string(va_list arg)
 	char *val = va_arg(arg, char *);
 	while (*val != '\0')
 	{
-		my_print(*val);
+		_putchar(*val);
 		val++;
 		cnt++
 	}
