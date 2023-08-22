@@ -28,12 +28,13 @@ int _printf(const char *format, ...)
 					count = count + print_function(ap);
 				}
 			}
-			else
-			{
-				_putchar(format[i]);
-				count = count + 1;
-			}
 		}
+		else
+		{
+			_putchar(format[i]);
+			count = count + 1;
+		}
+		
 	}
 	va_end(ap);
 	return (count);
