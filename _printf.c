@@ -12,30 +12,20 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-
+	if (format[i] == '\0')
+		return (-1);
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
-			i++;
 			spec = format[i + 1];
-			if (spec != '\0')
-			{
-				int (*print_function)(va_list) = selector(spec)
-					;
-				if (print_function != NULL)
-				{
-					count += print_function(ap);
-				}
-			}
+			count = count + (*selector(spec))(ap);
 		}
 		else
 		{
 			_putchar(format[i]);
-			count++;
+			count = count + 1;
 		}
 	}
-
-	va_end(ap);
 	return (count);
 }
