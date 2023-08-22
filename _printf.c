@@ -8,13 +8,15 @@ int _printf(const char *format, ...)
 {
 	int count = 0;
 	int i = 0;
-	char spec = 0;
+	char spec;
 	va_list ap;
 
-	va_start(ap, format);
-	if (format[i] == '\0')
+	if (format == NULL)
+	{
 		return (-1);
-	for (i = 0; format[i]; i++)
+	}
+	va_start(ap, format);
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
