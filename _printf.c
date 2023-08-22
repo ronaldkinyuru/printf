@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 {
 	int count = 0;
 	int i = 0;
-	int spec = 0;
+	char spec = 0;
 	va_list ap;
 
 	va_start(ap, format);
@@ -18,14 +18,23 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			spec = format[i + 1];
-			count = count + (*selector(spec))(ap);
-		}
-		else
-		{
-			_putchar(format[i]);
-			count = count + 1;
+			i++;
+			spec = format[i];
+			if (spec != '\0')
+			{
+				int (*print_function)(va_list) = selector(spec);
+				if (print_function != NULL)
+				{
+					count = count + print_function(ap);
+				}
+			}
+			else
+			{
+				_putchar(format[i]);
+				count = count + 1;
+			}
 		}
 	}
+	va_end(ap);
 	return (count);
 }
