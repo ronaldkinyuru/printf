@@ -15,10 +15,16 @@ int print_integer(va_list arg)
 		_putchar('_');
 		count = count + 1;
 	}
-	if (num /10)
+	if (val / 10)
 	{
-		count = count + put_integer(arg);
+		count = count + print_integer(arg);
 		_putchar(val % 10 + '0');
 		count += 1;
+	}
+	else
+		{
+			_putchar(val + '0');
+			count += 1;
+		}
 	return (count);
 }
