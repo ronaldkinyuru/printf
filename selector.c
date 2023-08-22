@@ -22,5 +22,9 @@ int (*selector(char c))(va_list)
 	{
 		return (&print_integer);
 	}
+	else if(c == 'b')
+	{
+		return (&print_unsigned_int);
+	}
 	return (NULL);
 }

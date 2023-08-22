@@ -11,5 +11,6 @@ int print_char(va_list arg);
 int print_string(va_list arg);
 int print_decimal(va_list arg);
 int print_integer(va_list arg);
+int print_unsigned_int(va_list arg);
 
 #endif /* MAIN_H*/
