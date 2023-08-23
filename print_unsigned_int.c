@@ -1,38 +1,30 @@
-#include"main.h"
+#include "main.h"
 
 /**
- * print_unsigned - prints unsigned int
- * @arg: arguments
+ * print_unsigned - prints unsigned int in binary
+ * @arg: argument
  * Return: count
  */
-int print_unsigned(va_list arg)
+int print_binary(va_list arg)
 {
 	int count = 0;
-	unsigned int val = va_arg(arg,int);
+	unsigned int val = va_arg(arg, unsigned int);
+	int i;
+	int binary[32];/*binary array store*/
 
-	if (val == 0)
+	/*Convert the integer to binary representation using an array*/
+	for (i = 0; i < 32; i++)
 	{
+		binary[i] = val % 2;
+		val /= 2;
+	}
+
+	/*Print the binary representation*/
+	for (i = 31; i >= 0; i--)
+	{
+		_putchar(binary[i] + '0');
 		count++;
-		_putchar('0');
-		return (count);	
 	}
 
-	if (val < 0)
-	{
-		val = -val;
-		_putchar('_');
-		count = count + 1;
-	}
-	if (val / 10)
-	{
-		count = count + print_unsigned_int(arg);
-		_putchar(val % 10 + '0');
-		count += 1;
-	}
-	else
-	{
-		_putchar(val + '0');
-		count += 1;
-	}
 	return (count);
 }

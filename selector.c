@@ -24,7 +24,7 @@ int (*selector(char c))(va_list)
 	}
 	else if(c == 'b')
 	{
-		return (&print_unsigned_int);
+		return (&print_binary);
 	}
 	return (NULL);
 }
