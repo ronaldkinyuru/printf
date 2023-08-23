@@ -18,13 +18,16 @@ int (*selector(char c))(va_list)
 	{
 		return (&print_decimal);
 	}
-	else if(c == 'i')
+	else if (c == 'i')
 	{
 		return (&print_integer);
 	}
-	else if(c == 'b')
+	else if (c == 'b')
 	{
 		return (&print_binary);
+	}else if (c == '%')
+	{
+		return (&print_modulus);
 	}
 	return (NULL);
 }

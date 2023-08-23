@@ -12,5 +12,5 @@ int print_string(va_list arg);
 int print_decimal(va_list arg);
 int print_integer(va_list arg);
 int print_binary(va_list arg);
-
+int print_modulus(va_list arg);
 #endif /* MAIN_H*/
