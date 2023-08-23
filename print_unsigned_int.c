@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_unsigned - prints unsigned int in binary
+ * print_binary - prints unsigned int conversion to binary
  * @arg: argument
  * Return: count
  */
