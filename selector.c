@@ -16,7 +16,7 @@ int (*selector(char c))(va_list)
 	}
 	else if (c == 'd')
 	{
-		return (&print_decimal);
+		return (&print_integer); /* check*/
 	}
 	else if (c == 'i')
 	{
