@@ -29,8 +29,9 @@ int (*selector(char c))(va_list)
 	{
 		return (&print_modulus);
 	}
-	else if
+	else if (c == ' ')
 	{
 		return (&print_spaces);
+	}
 	return (NULL);
 }
