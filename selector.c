@@ -25,7 +25,20 @@ int (*selector(char c))(va_list)
 	else if (c == 'b')
 	{
 		return (&print_binary);
-	}else if (c == '%')
+	}
+	else if (c == 'x' || 'X')
+	{
+		return (&print_unsigned_hex);
+	}
+	else if ( c == 'o')
+	{
+		return (&print_unsigned_octal);
+	}
+	else if (c == 'u')
+	{
+		return (&print_unsigned_decimal);
+	}
+	else if (c == '%')
 	{
 		return (&print_modulus);
 	}
