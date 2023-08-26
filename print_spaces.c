@@ -4,11 +4,12 @@
   * @arg: space to be printed
   * Return: count
   */
-print_spaces(va_list arg)
+int print_spaces(va_list arg)
 {
 	int count = 0;
-	
-	_putchar(' ');
+	int val = va_arg(arg, int);
+		
+	_putchar(val);
 	count++;
 	return (count);
 }

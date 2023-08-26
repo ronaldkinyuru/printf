@@ -15,5 +15,6 @@ int print_binary(va_list arg);
 int print_modulus(va_list arg);
 int print_unsigned_decimal(va_list arg);
 int print_unsigned_octal(va_list arg);
-int print_unsigned_hex.c(va_list arg);
+int print_unsigned_hex(va_list arg);
+int print_spaces(va_list arg);
 #endif /* MAIN_H*/

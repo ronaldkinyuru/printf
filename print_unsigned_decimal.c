@@ -6,7 +6,9 @@
   */
 int print_unsigned_decimal(va_list arg)
 {
-	int count 0, i, num_digits = 1;
+	int count = 0;
+	int i;
+	int num_digits = 1;
 	unsigned long int val = va_arg(arg, unsigned long int);
 
 	unsigned long int temp = val;
@@ -14,7 +16,7 @@ int print_unsigned_decimal(va_list arg)
 	while (temp != 0)
 	{
 		temp /= 10;
-		digits++;
+		num_digits++;
 	}
 	if (val == 0)
 	{
@@ -25,7 +27,7 @@ int print_unsigned_decimal(va_list arg)
 	{
 		char unsigned_string[11]; /*The maximum value of an unsigned 32-bit integer is 4,294,967,295. This number has 10 digits*/
 		i = 0;
-		while (num !=0)
+		while (val !=0)
 		{
 			unsigned_string[i] = (val % 10) + 48;
 			val /= 10;
