@@ -26,9 +26,13 @@ int (*selector(char c))(va_list)
 	{
 		return (&print_binary);
 	}
-	else if (c == 'x' || 'X')
+	else if (c == 'x')
 	{
 		return (&print_unsigned_hex);
+	}
+	else if (c == 'X')
+	{
+		return (&print_unsigned_hex_upper);
 	}
 	else if ( c == 'o')
 	{
