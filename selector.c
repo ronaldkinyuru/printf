@@ -42,13 +42,15 @@ int (*selector(char c))(va_list)
 	{
 		return (&print_unsigned_decimal);
 	}
-	else if (c == '%')
-	{
-		return (&print_modulus);
-	}
-	else if (c == ' ')
-	{
-		return (&print_spaces);
-	}
+	/**
+*	else if (c == '%')
+*	{
+*		return (&print_modulus);
+*	}
+*	else if (c == ' ')
+*	{
+*		return (&print_spaces);
+*	}
+*/
 	return (NULL);
 }

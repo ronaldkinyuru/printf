@@ -16,12 +16,18 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 	va_start(ap, format);
-	for (i = 0; format && format[i] != '\0'; i++)
+	i = 0; 
+	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[i] != '%')
+		{
+			_putchar(format[i]);
+			count++;
+		}
+		else
 		{
 			i++;
-			spec = format[i];
+			spec =  format[i];
 			if (spec != '\0')
 			{
 				int (*print_function)(va_list) = selector(spec);
@@ -31,12 +37,7 @@ int _printf(const char *format, ...)
 				}
 			}
 		}
-		else
-		{
-			_putchar(format[i]);
-			count = count + 1;
-		}
-
+		i++;
 	}
 	va_end(ap);
 	return (count);
