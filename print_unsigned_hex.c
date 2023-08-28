@@ -4,9 +4,9 @@
  * @arg: arguments
  * Return: count
  */
-int print_unsigned_hex(va_list arg)
+int print_unsigned_hex(va_list arg, int count)
 {
-	int i = 0, count = 0, j;
+	int i = 0, j;
 	char hex[100]; /* from int */
 	unsigned int val = va_arg(arg, unsigned int);
 
@@ -52,9 +52,9 @@ int print_unsigned_hex(va_list arg)
  * @arg: the argument
  * Return: count
  */
-int print_unsigned_hex_upper(va_list arg)
+int print_unsigned_hex_upper(va_list arg, int count)
 {
-	int i = 0, count = 0, j;
+	int i = 0, j;
 	char hex[100]; /* from int */
 	unsigned int val = va_arg(arg, unsigned int);
 

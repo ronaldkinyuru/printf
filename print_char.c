@@ -4,12 +4,11 @@
  * @arg: va_list
  * Return: count
  */
-int print_char(va_list arg)
+int print_char(va_list arg, int count)
 {
-	int count = 0;
 	char val = va_arg(arg, int);
 
 	_putchar(val);
-	count += 1;
+	count++;
 	return (count);
 }

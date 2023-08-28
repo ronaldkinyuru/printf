@@ -23,21 +23,27 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 			count++;
+			i++;
+			continue;/* check*/
 		}
 		else
 		{
+			int (*print_function)(va_list, int);
+
 			i++;
 			spec =  format[i];
 			if (spec != '\0')
 			{
-				int (*print_function)(va_list) = selector(spec);
+				count++;/* trying to count the %*/
+				print_function = selector(spec);
 				if (print_function != NULL)
 				{
-					count = count + print_function(ap);
+					count = count + print_function(ap, count);
 				}
 			}
+			i++;
 		}
-		i++;
+		/*i++;*/
 	}
 	va_end(ap);
 	return (count);

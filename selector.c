@@ -4,7 +4,7 @@
  * @c: format specifier
  * Return: pointer to the appropriate formatting function
  */
-int (*selector(char c))(va_list)
+int (*selector(char c))(va_list, int)
 {
 	if (c == 'c')
 	{
@@ -16,11 +16,11 @@ int (*selector(char c))(va_list)
 	}
 	else if (c == 'd')
 	{
-		return (&print_integer); /* check*/
+		return (&print_decimal); /* check*/
 	}
 	else if (c == 'i')
 	{
-		return (&print_integer);
+		return (&print_decimal);
 	}
 	else if (c == 'b')
 	{

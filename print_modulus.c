@@ -3,12 +3,8 @@
  *
  *
  */
-int print_modulus(va_list arg)
+int print_modulus(void)
 {
-	char val = va_arg(arg, int); /* check arg type*/
-	int count = 0;
-
-	_putchar(val); /* check*/
-	count ++;
-	return (count);
+	_putchar('%'); /* check*/
+	return (1);
 }

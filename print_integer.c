@@ -4,32 +4,32 @@
  * @arg: argument
  * Return: count
  */
-int print_integer(va_list arg)
+int print_integer(va_list arg, int count)
 {
-	int count = 0;
 	int val = va_arg(arg, int);
 
 	if (val == 0)
 	{
+		_putchar(0);
 		count++;
-		_putchar('0');
+
 	}
 	if (val < 0)
 	{
 		val = -val;
-		_putchar('_');
-		count = count + 1;
+		_putchar('-');
+		count++;
 	}
 	if (val / 10)
 	{
-		count = count + print_integer(arg);
+		count = print_integer(arg, count);
 		_putchar(val % 10 + '0');
-		count += 1;
+		count ++;
 	}
 	else
-		{
-			_putchar(val + '0');
-			count += 1;
-		}
+	{
+		_putchar(val + '0');
+		count ++;
+	}
 	return (count);
 }

@@ -4,16 +4,15 @@
  * @arg: argument
  * Return: count
  */
-int print_string(va_list arg)
+int print_string(va_list arg, int count)
 {
-	int count = 0;
 	char *val = va_arg(arg, char *);
-
-	while (*val != '\0')
+	int i = 0;
+	while (val[i] != '\0')
 	{
-		_putchar(*val);
-		val++;
+		_putchar(val[i]);
 		count++;
+		i++;
 	}
 	return (count);
 }
