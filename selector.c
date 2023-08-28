@@ -34,10 +34,6 @@ int (*selector(char c))(va_list)
 	{
 		return (&print_unsigned_hex_upper);
 	}
-	else if (c == 'p')
-	{
-		return (&print_pointer);
-	}
 	else if (c == 'o')
 	{
 		return (&print_unsigned_octal);
