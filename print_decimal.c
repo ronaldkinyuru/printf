@@ -1,11 +1,13 @@
 #include "main.h"
+int print_decimal_recursive(int val, int count);
 /**
  * print_decimal - print decimal
  * @arg: argument
  * Return: count
  */
-int print_decimal(va_list arg, int count)
+int print_decimal(va_list arg)
 {
+	int count = 0;
 	int val = va_arg(arg, int);
 	/**
 	 * char buffer[20];  // Adjust the buffer size as needed

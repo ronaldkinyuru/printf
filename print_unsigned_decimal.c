@@ -4,8 +4,9 @@
   * @arg: arguments
   * Return: count
   */
-int print_unsigned_decimal(va_list arg, int count)
+int print_unsigned_decimal(va_list arg)
 {
+	int count = 0;
 	int i;
 	int num_digits = 1;
 	unsigned long int val = va_arg(arg, unsigned long int);

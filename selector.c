@@ -4,7 +4,7 @@
  * @c: format specifier
  * Return: pointer to the appropriate formatting function
  */
-int (*selector(char c))(va_list, int)
+int (*selector(char c))(va_list)
 {
 	if (c == 'c')
 	{
@@ -34,7 +34,11 @@ int (*selector(char c))(va_list, int)
 	{
 		return (&print_unsigned_hex_upper);
 	}
-	else if ( c == 'o')
+	else if (c == 'p')
+	{
+		return (&print_pointer);
+	}
+	else if (c == 'o')
 	{
 		return (&print_unsigned_octal);
 	}
@@ -42,15 +46,14 @@ int (*selector(char c))(va_list, int)
 	{
 		return (&print_unsigned_decimal);
 	}
-	/**
-*	else if (c == '%')
-*	{
-*		return (&print_modulus);
-*	}
-*	else if (c == ' ')
-*	{
-*		return (&print_spaces);
-*	}
-*/
+	else if (c == ' ')
+	{
+		return (&print_spaces);
+	}
+	else if (c == 37)
+	{
+		return (&print_modulus);
+	}
+
 	return (NULL);
 }

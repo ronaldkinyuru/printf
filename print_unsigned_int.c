@@ -5,8 +5,9 @@
  * @arg: argument
  * Return: count
  */
-int print_binary(va_list arg, int count)
+int print_binary(va_list arg)
 {
+	int count = 0;
 	unsigned int val = va_arg(arg, unsigned int);
 	int i;
 	int binary[32];/*binary array store*/

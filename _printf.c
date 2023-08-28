@@ -16,34 +16,31 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 	va_start(ap, format);
-	i = 0; 
 	while (format[i] != '\0')
 	{
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
 			count++;
-			i++;
-			continue;/* check*/
 		}
 		else
 		{
-			int (*print_function)(va_list, int);
+				int (*print_function)(va_list);
 
 			i++;
 			spec =  format[i];
 			if (spec != '\0')
 			{
-				count++;/* trying to count the %*/
+				va_list ap_copy;
+				va_copy(ap_copy, ap);
 				print_function = selector(spec);
 				if (print_function != NULL)
 				{
-					count = count + print_function(ap, count);
+					count = count + print_function(ap);
 				}
 			}
-			i++;
 		}
-		/*i++;*/
+		i++;
 	}
 	va_end(ap);
 	return (count);

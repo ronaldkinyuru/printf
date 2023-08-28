@@ -3,8 +3,9 @@
  *
  *
  */
-int print_modulus(void)
+int print_modulus(va_list arg)
 {
-	_putchar('%'); /* check*/
+	(void)arg;
+	_putchar(37); /* check*/
 	return (1);
 }

@@ -4,9 +4,10 @@
   * @arg: ocatl to be printed
   * Return: count
   */
-int print_unsigned_octal(va_list arg, int count)
+int print_unsigned_octal(va_list arg)
 {
 	int octal[100], i = 0, j;
+	int count = 0;
 	unsigned int val = va_arg(arg, unsigned int);
 
 	while (val != 0)
