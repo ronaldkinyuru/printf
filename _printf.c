@@ -16,7 +16,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 	va_start(ap, format);
-	i = 0; 
 	while (format[i] != '\0')
 	{
 		if (format[i] != '%')
@@ -26,11 +25,15 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+				int (*print_function)(va_list);
+
 			i++;
 			spec =  format[i];
 			if (spec != '\0')
 			{
-				int (*print_function)(va_list) = selector(spec);
+				va_list ap_copy;
+				va_copy(ap_copy, ap);
+				print_function = selector(spec);
 				if (print_function != NULL)
 				{
 					count = count + print_function(ap);

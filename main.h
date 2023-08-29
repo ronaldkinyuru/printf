@@ -18,4 +18,5 @@ int print_unsigned_octal(va_list arg);
 int print_unsigned_hex(va_list arg);
 int print_unsigned_hex_upper(va_list arg);
 int print_spaces(va_list arg);
+int print_pointer(va_list arg);
 #endif /* MAIN_H*/
