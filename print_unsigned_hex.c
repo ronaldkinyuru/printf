@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_hex - prints unsigned hexadecimal
+ * print_unsigned_hex - prints unsigned hexadecimal
  * @arg: arguments
  * Return: count
  */
@@ -48,7 +48,7 @@ int print_unsigned_hex(va_list arg)
 
 }
 /**
- * print_unsigned_hex_upper - upper hex
+ * print_unsigned_hex_upper -prints upper hex
  * @arg: the argument
  * Return: count
  */

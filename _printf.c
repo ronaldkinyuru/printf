@@ -32,6 +32,7 @@ int _printf(const char *format, ...)
 			if (spec != '\0')
 			{
 				va_list ap_copy;
+
 				va_copy(ap_copy, ap);
 				print_function = selector(spec);
 				if (print_function != NULL)

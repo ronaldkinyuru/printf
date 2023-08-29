@@ -15,6 +15,7 @@ int print_binary(va_list arg)
 	/*calculate number of bits required for the binary representation*/
 	int num_bits = 0;
 	unsigned int temp_val = val;
+
 	while (temp_val > 0)
 	{
 		temp_val /= 2;

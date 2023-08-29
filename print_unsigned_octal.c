@@ -13,6 +13,7 @@ int print_unsigned_octal(va_list arg)
 	while (val != 0)
 	{
 		int remainder = val % 8;
+
 		octal[i] = remainder + 48;
 		i++;
 		val /= 8;

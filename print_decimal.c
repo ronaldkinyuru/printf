@@ -9,16 +9,7 @@ int print_decimal(va_list arg)
 {
 	int count = 0;
 	int val = va_arg(arg, int);
-	/**
-	 * char buffer[20];  // Adjust the buffer size as needed
-	 *sprintf(buffer, "%d", val);  // Convert int to string
-	 * int i = 0;
-	 * while (buffer[i] != '\0') {
-	 * putchar(buffer[i]);
-	 * count++;
-	 * i++;
-	 * }
-	 */ 
+
 	if (val < 0)
 	{
 		_putchar('-');
@@ -27,7 +18,7 @@ int print_decimal(va_list arg)
 	}
 	if (val == 0)
 	{
-		_putchar(0);
+		_putchar('0');
 		count++;
 	}
 	else
@@ -37,14 +28,20 @@ int print_decimal(va_list arg)
 	}
 	return (count);
 }
+/**
+  * print_decimal_recursive - prints decimal recurrsively
+  * @val: value to be printed
+  * @count: current count of digits printed
+  * Return: updated count
+  */
 int print_decimal_recursive(int val, int count)
 {
 	if (val == 0)
 	{
-		return count;
+		return (count);
 	}
 	count = print_decimal_recursive(val / 10, count);
 	_putchar('0' + (val % 10)); /* print each digit*/
 	count++;
-	return count;
+	return (count);
 }

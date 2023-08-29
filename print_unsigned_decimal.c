@@ -1,9 +1,10 @@
 #include "main.h"
+
 /**
-  * print_unsigned_decimal - prints unsigned decimal
-  * @arg: arguments
-  * Return: count
-  */
+ * print_unsigned_decimal - Prints unsigned decimal
+ * @arg: Argument containing the unsigned long integer to be printed
+ * Return: Number of characters printed
+ */
 int print_unsigned_decimal(va_list arg)
 {
 	int count = 0;
@@ -18,6 +19,7 @@ int print_unsigned_decimal(va_list arg)
 		temp /= 10;
 		num_digits++;
 	}
+
 	if (val == 0)
 	{
 		_putchar('0');
@@ -25,19 +27,24 @@ int print_unsigned_decimal(va_list arg)
 	}
 	else
 	{
-		char unsigned_string[11]; /*The maximum value of an unsigned 32-bit integer is 4,294,967,295. This number has 10 digits*/
+		char unsigned_string[11]; /* Max value is 4,294,967,295 (10 digits) */
+
 		i = 0;
-		while (val !=0)
+
+		while (val != 0)
 		{
-			unsigned_string[i] = (val % 10) + 48;
+			unsigned_string[i] = (val % 10) + '0';
 			val /= 10;
 			i++;
 		}
+
 		for (i = num_digits - 1; i >= 0; i--)
 		{
 			_putchar(unsigned_string[i]);
 			count++;
 		}
 	}
+
 	return (count);
 }
+
